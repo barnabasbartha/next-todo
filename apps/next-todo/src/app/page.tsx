@@ -10,6 +10,7 @@ import {
   CheckCircleIcon,
   DevicePhoneMobileIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const features = [
   {
@@ -89,15 +90,18 @@ export default function Index() {
             productivity shared with your friends real-time.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
+            <Link
+              href="/lists"
               className="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
             >
               Sign in
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-white">
+            </Link>
+            <Link
+              href="/lists"
+              className="text-sm font-semibold leading-6 text-white"
+            >
               Learn more <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -302,18 +306,18 @@ export default function Index() {
               To-Do to manage their tasks and boost their productivity.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <Link
+                href="/lists"
                 className="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
               >
                 Sign in
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/lists"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -441,7 +445,7 @@ export default function Index() {
           </div>
           <div className="mt-12 border-t border-gray-200 pt-8">
             <p className="text-base text-gray-400 xl:text-center">
-              &copy; 2024 Next To-Do. All rights reserved.
+              &copy; 2025 Next To-Do. All rights reserved.
             </p>
           </div>
         </div>
