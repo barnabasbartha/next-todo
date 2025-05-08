@@ -269,8 +269,8 @@ export default function Index() {
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
                     <p>
-                      With Next To-Do, I never forget anything important. It's
-                      simple, fast, and perfect for my busy life.
+                      With Next To-Do, I never forget anything important.
+                      It&apos;s simple, fast, and perfect for my busy life.
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
