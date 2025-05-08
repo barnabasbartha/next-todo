@@ -154,15 +154,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/sarah.avif"
+                      alt="Sarah"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        Sarah Johnson
-                      </div>
+                      <div className="font-semibold text-gray-900">Sarah</div>
                       <div className="text-gray-600">@sarahj</div>
                     </div>
                   </figcaption>
@@ -178,15 +178,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/michael.avif"
+                      alt="Michael"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        Michael Chen
-                      </div>
+                      <div className="font-semibold text-gray-900">Michael</div>
                       <div className="text-gray-600">@michaelc</div>
                     </div>
                   </figcaption>
@@ -201,15 +201,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/emily.avif"
+                      alt="Emily"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        Emily Rodriguez
-                      </div>
+                      <div className="font-semibold text-gray-900">Emily</div>
                       <div className="text-gray-600">@emilyr</div>
                     </div>
                   </figcaption>
@@ -224,15 +224,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/david.avif"
+                      alt="David"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        David Wilson
-                      </div>
+                      <div className="font-semibold text-gray-900">David</div>
                       <div className="text-gray-600">@davidw</div>
                     </div>
                   </figcaption>
@@ -247,15 +247,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/thomas.avif"
+                      alt="Thomas"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        Thomas Brown
-                      </div>
+                      <div className="font-semibold text-gray-900">Thomas</div>
                       <div className="text-gray-600">@thomasb</div>
                     </div>
                   </figcaption>
@@ -270,15 +270,15 @@ export default function Index() {
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
+                      src="/images/testimonials/lisa.avif"
+                      alt="Lisa"
+                      width={40}
+                      height={40}
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        Lisa Anderson
-                      </div>
+                      <div className="font-semibold text-gray-900">Lisa</div>
                       <div className="text-gray-600">@lisaa</div>
                     </div>
                   </figcaption>
