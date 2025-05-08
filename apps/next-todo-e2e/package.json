@@ -1,0 +1,10 @@
+{
+  "name": "next-todo-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "next-todo"
+    ]
+  }
+}
