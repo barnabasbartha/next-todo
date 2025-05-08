@@ -1,7 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { DragDropContext, Droppable, Draggable, DropResult, DroppableProvided, DraggableProvided, DraggableStateSnapshot } from '@hello-pangea/dnd';
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DropResult,
+  DroppableProvided,
+  DraggableProvided,
+  DraggableStateSnapshot,
+} from '@hello-pangea/dnd';
 
 const initialTodos = [
   { id: '1', text: 'Buy groceries', checked: false },
@@ -13,7 +21,11 @@ export default function ListPage() {
   const [todos, setTodos] = useState(initialTodos);
 
   const handleCheck = (id: string) => {
-    setTodos(todos => todos.map(todo => todo.id === id ? { ...todo, checked: !todo.checked } : todo));
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
   };
 
   const onDragEnd = (result: DropResult) => {
@@ -34,12 +46,17 @@ export default function ListPage() {
               <ul {...provided.droppableProps} ref={provided.innerRef}>
                 {todos.map((todo, index) => (
                   <Draggable key={todo.id} draggableId={todo.id} index={index}>
-                    {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
+                    {(
+                      provided: DraggableProvided,
+                      snapshot: DraggableStateSnapshot
+                    ) => (
                       <li
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className={`flex items-center p-3 mb-2 bg-gray-100 rounded transition-shadow ${snapshot.isDragging ? 'shadow-lg' : ''}`}
+                        className={`flex items-center p-3 mb-2 bg-gray-100 rounded transition-shadow ${
+                          snapshot.isDragging ? 'shadow-lg' : ''
+                        }`}
                       >
                         <input
                           type="checkbox"
@@ -47,7 +64,13 @@ export default function ListPage() {
                           onChange={() => handleCheck(todo.id)}
                           className="mr-3 h-5 w-5"
                         />
-                        <span className={todo.checked ? 'line-through text-gray-400' : ''}>{todo.text}</span>
+                        <span
+                          className={
+                            todo.checked ? 'line-through text-gray-400' : ''
+                          }
+                        >
+                          {todo.text}
+                        </span>
                       </li>
                     )}
                   </Draggable>
@@ -67,12 +90,17 @@ export default function ListPage() {
               <ul {...provided.droppableProps} ref={provided.innerRef}>
                 {todos.map((todo, index) => (
                   <Draggable key={todo.id} draggableId={todo.id} index={index}>
-                    {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
+                    {(
+                      provided: DraggableProvided,
+                      snapshot: DraggableStateSnapshot
+                    ) => (
                       <li
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className={`flex items-center p-3 mb-2 bg-gray-100 rounded transition-shadow ${snapshot.isDragging ? 'shadow-lg' : ''}`}
+                        className={`flex items-center p-3 mb-2 bg-gray-100 rounded transition-shadow ${
+                          snapshot.isDragging ? 'shadow-lg' : ''
+                        }`}
                       >
                         <input
                           type="checkbox"
@@ -80,7 +108,13 @@ export default function ListPage() {
                           onChange={() => handleCheck(todo.id)}
                           className="mr-3 h-5 w-5"
                         />
-                        <span className={todo.checked ? 'line-through text-gray-400' : ''}>{todo.text}</span>
+                        <span
+                          className={
+                            todo.checked ? 'line-through text-gray-400' : ''
+                          }
+                        >
+                          {todo.text}
+                        </span>
                       </li>
                     )}
                   </Draggable>
@@ -93,4 +127,4 @@ export default function ListPage() {
       </div>
     </main>
   );
-} 
+}
