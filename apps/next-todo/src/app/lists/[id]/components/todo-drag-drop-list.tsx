@@ -15,7 +15,19 @@ export const TodoDragDropList = ({
   onCheck,
   onOrderChange,
 }: TodoDragDropListProps) => {
-  const { editingId } = useTodos();
+  const { editingId, stopEditing, editText, deleteTodo } = useTodos();
+
+  const handleValueChange = (value: string) => {
+    if (!editingId) return;
+    const text = value.trim();
+    if (text) {
+      editText(editingId, text);
+    } else if (editingId === newItemId) {
+      deleteTodo(editingId);
+    }
+    stopEditing();
+  };
+
   return (
     <DragDropList
       groupId={listId}
@@ -43,9 +55,23 @@ export const TodoDragDropList = ({
               <input
                 type="text"
                 className="h-5 w-full bg-transparent outline-none"
-                value={todoItem.text}
+                defaultValue={todoItem.text}
                 autoFocus
                 placeholder="To-do description"
+                onBlur={(e) => handleValueChange(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleValueChange((e.target as HTMLInputElement).value);
+                  }
+                  if (e.key === 'Escape') {
+                    handleValueChange('');
+                  }
+                }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!e.target) return;
+                  handleValueChange((e.target as HTMLInputElement).value);
+                }}
               />
             ) : (
               <span

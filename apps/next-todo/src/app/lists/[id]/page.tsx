@@ -6,7 +6,13 @@ import { useTodos } from '@/hooks/useTodos';
 import { TodoListContextProvider } from '@/contexts/todo-list-context';
 
 function ListPage() {
-  const { openTodos, doneTodos, setOrder, toggleOpen, add } = useTodos();
+  const {
+    openTodos,
+    doneTodos,
+    setOrder,
+    toggleOpen,
+    addNew: add,
+  } = useTodos();
 
   return (
     <main className="flex flex-col gap-2 md:gap-8 min-h-screen items-center md:justify-center">
@@ -41,7 +47,7 @@ function ListPage() {
               className="text-lg text-gray-600 text-center py-4 cursor-pointer"
               onClick={add}
             >
-              Click to add more item
+              Click to add item
             </p>
           </div>
         </Card>

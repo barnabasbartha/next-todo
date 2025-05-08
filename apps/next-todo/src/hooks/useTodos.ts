@@ -1,17 +1,12 @@
 import { TodoListContext } from '@/contexts/todo-list-context';
 import { Todo } from '@/models/todo';
-import { useState, useMemo, useContext } from 'react';
+import { useMemo, useContext } from 'react';
 
 export const newItemId = '_';
 
 export const useTodos = () => {
-  // Global states
-  const initialTodos: Todo[] = [
-    // { id: '1', text: 'Buy groceries', open: true },
-    // { id: '2', text: 'Walk the dog', open: true },
-    // { id: '3', text: 'Read a book', open: false },
-  ];
-  const [todos, setTodos] = useState(initialTodos);
+  const { todos, setTodos, editingId, setEditingId, stopEditing } =
+    useContext(TodoListContext);
 
   // Reducers
   const todoIndexById = useMemo(
@@ -25,8 +20,6 @@ export const useTodos = () => {
 
   const openTodos = useMemo(() => todos.filter(({ open }) => open), [todos]);
   const doneTodos = useMemo(() => todos.filter(({ open }) => !open), [todos]);
-
-  const { editingId, setEditingId } = useContext(TodoListContext);
 
   const toggleOpen = (id: string) => {
     const index = todoIndexById[id];
@@ -47,7 +40,7 @@ export const useTodos = () => {
     console.log(id, destinationIndex);
   };
 
-  const add = () => {
+  const addNew = () => {
     const id = newItemId;
     setEditingId(id);
     setTodos((todos) => [
@@ -60,13 +53,43 @@ export const useTodos = () => {
     ]);
   };
 
+  const editText = (id: string, text: string) => {
+    const index = todoIndexById[id];
+    const value = todos[index];
+    if (!value) return;
+    const newValue: Todo = {
+      ...value,
+      id: value.id === newItemId ? Math.random().toString() : value.id,
+      text,
+    };
+    setTodos((values) => [
+      ...values.slice(0, index),
+      newValue,
+      ...values.slice(index + 1),
+    ]);
+  };
+
+  const deleteTodo = (id: string) => {
+    if (!id) return;
+    const index = todoIndexById[id];
+    const value = todos[index];
+    if (!value) return;
+    setTodos((values) => [
+      ...values.slice(0, index),
+      ...values.slice(index + 1),
+    ]);
+  };
+
   return {
     todos,
     openTodos,
     doneTodos,
     toggleOpen,
     setOrder,
-    add,
+    addNew,
     editingId,
+    stopEditing,
+    editText,
+    deleteTodo,
   };
 };
