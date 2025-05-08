@@ -12,8 +12,7 @@ export interface TodoListContextState {
   readonly setTodos: Dispatch<SetStateAction<Todo[]>>;
 
   readonly editingId?: string;
-  readonly setEditingId: (id: string) => void;
-  readonly stopEditing: () => void;
+  readonly setEditingId: (id: string | undefined) => void;
 }
 
 export const TodoListContext = createContext<TodoListContextState>(
@@ -29,11 +28,7 @@ export const TodoListContextProvider = ({
 }: TodoListContextProviderProps) => {
   const [editingId, setEditingId] = useState<string | undefined>(undefined);
 
-  const initialTodos: Todo[] = [
-    // { id: '1', text: 'Buy groceries', open: true },
-    // { id: '2', text: 'Walk the dog', open: true },
-    // { id: '3', text: 'Read a book', open: false },
-  ];
+  const initialTodos: Todo[] = [];
   const [todos, setTodos] = useState(initialTodos);
 
   return (
@@ -44,7 +39,6 @@ export const TodoListContextProvider = ({
 
         editingId,
         setEditingId,
-        stopEditing: () => setEditingId(undefined),
       }}
     >
       {children}

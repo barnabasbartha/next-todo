@@ -1,13 +1,13 @@
 import {
   DragDropContext,
-  Droppable,
-  DroppableProvided,
   Draggable,
   DraggableProvided,
   DraggableStateSnapshot,
+  Droppable,
+  DroppableProvided,
   DropResult,
 } from '@hello-pangea/dnd';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 
 export interface DragDropListProps<T> {
   list: T[];
@@ -15,7 +15,6 @@ export interface DragDropListProps<T> {
   idKey: keyof T;
   renderItem: (item: T) => ReactNode;
   onOrderChange: (itemId: string, destinationIndex: number) => void;
-  itemDragEnabled?: (item: T) => boolean;
 }
 
 export const DragDropList = <T extends object>({
@@ -24,7 +23,6 @@ export const DragDropList = <T extends object>({
   idKey: key,
   renderItem,
   onOrderChange,
-  itemDragEnabled,
 }: DragDropListProps<T>) => {
   const onDragEnd = (result: DropResult) => {
     if (!result.destination) return;
@@ -45,9 +43,7 @@ export const DragDropList = <T extends object>({
                   key={id}
                   draggableId={id}
                   index={index}
-                  isDragDisabled={
-                    list.length < 2 || !(itemDragEnabled?.(item) ?? true)
-                  }
+                  isDragDisabled={list.length < 2}
                 >
                   {(
                     provided: DraggableProvided,
@@ -57,7 +53,7 @@ export const DragDropList = <T extends object>({
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className={`flex items-center p-3 mb-2 bg-gray-100 rounded transition-shadow ${
+                      className={`flex items-center p-3 mb-2 bg-gray-100 rounded-md transition-shadow ${
                         snapshot.isDragging ? 'shadow-lg' : ''
                       }`}
                     >

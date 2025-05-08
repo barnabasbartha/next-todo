@@ -1,14 +1,11 @@
 import { TodoListContext } from '@/contexts/todo-list-context';
 import { Todo } from '@/models/todo';
-import { useMemo, useContext } from 'react';
-
-export const newItemId = '_';
+import { useContext, useMemo } from 'react';
 
 export const useTodos = () => {
-  const { todos, setTodos, editingId, setEditingId, stopEditing } =
+  const { todos, setTodos, editingId, setEditingId } =
     useContext(TodoListContext);
 
-  // Reducers
   const todoIndexById = useMemo(
     () =>
       todos.reduce(
@@ -40,14 +37,12 @@ export const useTodos = () => {
     console.log(id, destinationIndex);
   };
 
-  const addNew = () => {
-    const id = newItemId;
-    setEditingId(id);
+  const addNew = (text: string) => {
     setTodos((todos) => [
       {
-        id,
+        id: Math.random().toString(), // add by db,
         open: true,
-        text: '',
+        text,
       },
       ...todos,
     ]);
@@ -59,7 +54,6 @@ export const useTodos = () => {
     if (!value) return;
     const newValue: Todo = {
       ...value,
-      id: value.id === newItemId ? Math.random().toString() : value.id,
       text,
     };
     setTodos((values) => [
@@ -80,6 +74,9 @@ export const useTodos = () => {
     ]);
   };
 
+  const stopEditing = () => {
+    setEditingId(undefined);
+  };
 
   return {
     todos,
