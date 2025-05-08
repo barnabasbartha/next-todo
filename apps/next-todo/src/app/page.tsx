@@ -5,10 +5,6 @@ import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
   UserGroupIcon,
   BellIcon,
   CheckCircleIcon,
