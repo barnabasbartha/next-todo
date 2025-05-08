@@ -4,32 +4,32 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon, UserGroupIcon, BellIcon, CheckCircleIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Easy to Use',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+      'A simple and clear interface that anyone can use to organize daily tasks, big or small.',
+    icon: CheckCircleIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Share with Others',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Collaborate with family, friends, or coworkers. Share lists and work together in real time.',
+    icon: UserGroupIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Smart Reminders',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+      'Never forget important things again. Get helpful reminders for your tasks and events.',
+    icon: BellIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Access Anywhere',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      'Use Next To-Do on your phone, tablet, or computer. Your lists are always with you.',
+    icon: DevicePhoneMobileIcon,
   },
 ]
 
@@ -91,13 +91,11 @@ export default function Index() {
       {/* Feature Section */}    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-sky-600">Deploy faster</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
             Everything you need to deploy your app
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            Next To-Do helps you stay organized, share your lists, and never miss a thing. Simple, friendly, and made for everyone.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -123,9 +121,8 @@ export default function Index() {
       <div className="bg-gray-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-lg font-semibold leading-8 tracking-tight text-sky-600">Testimonials</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              We have worked with thousands of amazing people
+              Trusted by thousands of amazing people
             </p>
           </div>
           <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
@@ -133,7 +130,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>Next To-Do has completely transformed how I manage my daily tasks. The interface is intuitive and the features are exactly what I need to stay organized.</p>
+                    <p>Next To-Do makes it so easy to keep track of everything I need to do. I love how simple and clear it is!</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -147,7 +144,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>The best to-do app I've ever used. Clean, fast, and incredibly powerful. It's become an essential part of my workflow.</p>
+                    <p>Staying organized has never been easier. I can share my lists with family and friends, and everyone stays on the same page.</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -161,7 +158,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>I love how seamlessly it integrates with my development workflow. The keyboard shortcuts are a game-changer.</p>
+                    <p>It helps me remember important things and get more done every day. The reminders are super helpful!</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -175,7 +172,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>The dark mode support is excellent, and the app performs flawlessly even with hundreds of tasks. Highly recommended!</p>
+                    <p>I love how I can use Next To-Do on my phone and computer. It keeps my tasks in sync wherever I am.</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -189,7 +186,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>The collaboration features are outstanding. My team and I can easily share and track tasks together.</p>
+                    <p>My family uses Next To-Do to plan our groceries and chores together. It makes teamwork so much easier!</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -203,7 +200,7 @@ export default function Index() {
               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
                 <figure className="rounded-2xl bg-white p-8 text-sm leading-6">
                   <blockquote className="text-gray-900">
-                    <p>The mobile app is just as good as the web version. I can manage my tasks on the go without any compromise.</p>
+                    <p>With Next To-Do, I never forget anything important. It's simple, fast, and perfect for my busy life.</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
                     <img className="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -229,7 +226,7 @@ export default function Index() {
               Start using Next To-Do.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-900">
-              Join thousands of developers who are already using Next To-Do to manage their tasks and boost their productivity.
+              Join thousands of brilliant people who are already using Next To-Do to manage their tasks and boost their productivity.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -253,7 +250,7 @@ export default function Index() {
             <div className="space-y-8 xl:col-span-1">
               <h2 className="text-2xl font-bold text-gray-900">Next To-Do</h2>
               <p className="text-gray-500 text-base">
-                Making task management simple and efficient for developers worldwide.
+                Next generation task management simple and efficient for everyone.
               </p>
               <div className="flex space-x-6">
                 {/* Social Links */}
