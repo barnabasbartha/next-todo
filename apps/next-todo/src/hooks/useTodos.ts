@@ -80,6 +80,7 @@ export const useTodos = () => {
     ]);
   };
 
+
   return {
     todos,
     openTodos,
@@ -88,6 +89,7 @@ export const useTodos = () => {
     setOrder,
     addNew,
     editingId,
+    startEditing: setEditingId,
     stopEditing,
     editText,
     deleteTodo,
