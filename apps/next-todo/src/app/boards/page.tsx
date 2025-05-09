@@ -1,15 +1,22 @@
 'use client';
 
 import { Card } from '@/components/card';
+import { useAuth } from '@/hooks/useAuth';
 import { useBoards } from '@/hooks/useBoards';
 import Link from 'next/link';
 
 export default function BoardsPage() {
   const { boards } = useBoards();
+  const { user } = useAuth();
   return (
     <>
       <div className="flex gap-4 justify-center w-full max-w-md md:max-w-xl px-5 items-center">
-        <div className="font-light text-2xl py-4 text-center">Boards</div>
+        <div className="font-light text-2xl py-10 text-center">{`Hi, ${user.name}!`}</div>
+      </div>
+      <div className="flex gap-4 justify-center w-full max-w-md md:max-w-xl px-5 items-center">
+        <div className="text-sm py-4 text-sky-800 text-center font-bold uppercase">
+          My boards
+        </div>
       </div>
 
       {boards.map((board) => (

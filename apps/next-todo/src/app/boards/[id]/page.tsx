@@ -21,13 +21,15 @@ export default function BoardPage() {
           href="/boards"
           className="flex flex items-center w-1/3 cursor-pointer"
         >
-          <ArrowLeftIcon className="w-6 h-6" />
+          <ArrowLeftIcon className="w-6 h-6 shrink-0" />
           <span className="py-4 pl-2 pr-4">Back</span>
         </Link>
 
         {board && (
           <>
-            <div className="w-1/3 font-light text-2xl">{board.name}</div>
+            <div className="w-1/3 text-sm py-4 text-sky-800 text-center font-bold uppercase shrink-0">
+              {board.name}
+            </div>
             <div className="w-1/3"></div>
           </>
         )}
