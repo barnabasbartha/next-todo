@@ -91,13 +91,13 @@ export default function Index() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
-              href="/lists"
+              href="/boards"
               className="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
             >
               Sign in
             </Link>
             <Link
-              href="/lists"
+              href="/boards"
               className="text-sm font-semibold leading-6 text-white"
             >
               Learn more <span aria-hidden="true">→</span>
@@ -307,13 +307,13 @@ export default function Index() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                href="/lists"
+                href="/boards"
                 className="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
               >
                 Sign in
               </Link>
               <Link
-                href="/lists"
+                href="/boards"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 Learn more <span aria-hidden="true">→</span>

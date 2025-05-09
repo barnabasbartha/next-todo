@@ -4,7 +4,7 @@ import { Card } from '@/components/card';
 import { useBoards } from '@/hooks/useBoards';
 import Link from 'next/link';
 
-export default function ListsPage() {
+export default function BoardsPage() {
   const { boards } = useBoards();
   return (
     <>
@@ -15,7 +15,7 @@ export default function ListsPage() {
       {boards.map((board) => (
         <Link
           key={board.id}
-          href={`/lists/${board.id}`}
+          href={`/boards/${board.id}`}
           className="w-full flex flex-col gap-2 md:gap-8 justify-center items-center group"
         >
           <Card className="group-hover:bg-sky-50 group-hover:text-sky-900 transition">

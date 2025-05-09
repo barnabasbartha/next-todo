@@ -9,7 +9,7 @@ import { useParams } from 'next/navigation';
 import { NewTodoItem } from './components/new-todo-item';
 import { TodoDragDropList } from './components/todo-drag-drop-list';
 
-export default function ListPage() {
+export default function BoardPage() {
   const { id } = useParams() as { id: string | undefined };
   const { board } = useBoard(id ?? '');
   const { openTodos, doneTodos } = useTodos(id ?? '');
@@ -18,7 +18,7 @@ export default function ListPage() {
     <>
       <div className="flex gap-4 justify-between w-full max-w-md md:max-w-xl px-5 items-center">
         <Link
-          href="/lists"
+          href="/boards"
           className="flex flex items-center w-1/3 cursor-pointer"
         >
           <ArrowLeftIcon className="w-6 h-6" />
