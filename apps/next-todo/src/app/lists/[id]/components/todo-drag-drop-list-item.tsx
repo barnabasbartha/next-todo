@@ -8,15 +8,8 @@ interface TodoDragDropListItemProps {
 }
 
 export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
-  const {
-    openTodos,
-    editingId,
-    stopEditing,
-    editText,
-    deleteTodo,
-    startEditing,
-    toggleOpen,
-  } = useTodos();
+  const { editingId, stopEditing, editText, startEditing, toggleOpen } =
+    useTodos();
 
   const isEditing = todo.id === editingId;
 
@@ -25,10 +18,6 @@ export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
     const text = value.trim();
     if (text) {
       editText(editingId, text);
-    }
-
-    if (openTodos.length > 1) {
-      deleteTodo(editingId);
     }
     stopEditing();
   };
@@ -47,8 +36,7 @@ export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
         type="checkbox"
         checked={!todo.open}
         onChange={() => {
-          toggleOpen(todo.id);
-          stopEditing();
+          //
         }}
         className="mr-3 h-5 w-5 flex-shrink-0"
       />
