@@ -55,7 +55,7 @@ export const DragDropList = <T extends object>({
                       {...provided.dragHandleProps}
                       className={`flex items-center p-3 mb-2 bg-gray-100 rounded-md transition-shadow ${
                         snapshot.isDragging ? 'shadow-lg' : ''
-                      }`}
+                      } hover:bg-sky-50 hover:text-sky-900 transition`}
                     >
                       {renderItem(item)}
                     </li>

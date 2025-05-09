@@ -14,7 +14,7 @@ export const NewTodoItem = () => {
   };
 
   return (
-    <div className="flex items-center p-3 mb-2 bg-gray-100 rounded-md transition-shadow">
+    <div className="flex items-center p-3 mb-2 bg-gray-100 rounded-md border-2 border-transparent focus-within:border-gray-200 transition">
       <div
         className={`flex flex-row justify-item items-center w-full cursor-pointer`}
       >
