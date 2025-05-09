@@ -17,7 +17,7 @@ export const TodoItemInput = ({
       maxLength={64}
       onBlur={(e) => {
         handleValueChange(e.target.value);
-        if (!!e.target.value) {
+        if (e.target.value) {
           e.target.value = '';
           e.target.focus();
         }

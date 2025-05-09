@@ -1,6 +1,7 @@
 import { DragDropList } from '@/components/drag-drop-list';
 import { useTodos } from '@/hooks/useTodos';
 import { Todo } from '@/models/todo';
+import { useParams } from 'next/navigation';
 import { TodoDragDropListItem } from './todo-drag-drop-list-item';
 
 export interface TodoDragDropListProps {
@@ -9,7 +10,8 @@ export interface TodoDragDropListProps {
 }
 
 export const TodoDragDropList = ({ listId, todos }: TodoDragDropListProps) => {
-  const { setOrder } = useTodos();
+  const { id } = useParams() as { id: string | undefined };
+  const { setOrder } = useTodos(id ?? '');
 
   return (
     <DragDropList

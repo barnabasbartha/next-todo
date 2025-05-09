@@ -1,24 +1,31 @@
 import { TodoListContext } from '@/contexts/todo-list-context';
 import { Todo } from '@/models/todo';
 import { useContext, useMemo } from 'react';
+import { useBoard } from './useBoard';
 
-export const useTodos = () => {
-  const { todos, setTodos, editingId, setEditingId } =
-    useContext(TodoListContext);
+export const useTodos = (boardId: string) => {
+  const { board, update } = useBoard(boardId);
+  const { editingId, setEditingId } = useContext(TodoListContext);
 
-  const openTodos = useMemo(() => todos.filter(({ open }) => open), [todos]);
-  const doneTodos = useMemo(() => todos.filter(({ open }) => !open), [todos]);
+  const openTodos = useMemo(
+    () => board?.todos.filter(({ open }) => open) ?? [],
+    [board]
+  );
+  const doneTodos = useMemo(
+    () => board?.todos.filter(({ open }) => !open) ?? [],
+    [board]
+  );
 
   const toggleOpen = (id: string) => {
-    setTodos((items) =>
-      items.map((item) => {
+    update(boardId, (board) => ({
+      todos: board.todos.map((item) => {
         if (item.id !== id) return item;
         return {
           ...item,
           open: !item.open,
         } satisfies Todo;
-      })
-    );
+      }),
+    }));
   };
 
   const setOrder = (id: string, destinationIndex: number) => {
@@ -26,30 +33,34 @@ export const useTodos = () => {
   };
 
   const addNew = (text: string) => {
-    setTodos((todos) => [
-      {
-        id: Math.random().toString(), // add by db,
-        open: true,
-        text,
-      },
-      ...todos,
-    ]);
+    update(boardId, (board) => ({
+      todos: [
+        {
+          id: Math.random().toString(), // add by db,
+          open: true,
+          text,
+        },
+        ...board.todos,
+      ],
+    }));
   };
 
   const editText = (id: string, text: string) => {
-    setTodos((items) =>
-      items.map((item) => {
+    update(boardId, (board) => ({
+      todos: board.todos.map((item) => {
         if (item.id !== id) return item;
         return {
           ...item,
           text,
         } satisfies Todo;
-      })
-    );
+      }),
+    }));
   };
 
   const deleteTodo = (id: string) => {
-    setTodos((items) => items.filter((item) => item.id !== id));
+    update(boardId, (board) => ({
+      todos: board.todos.filter((item) => item.id !== id),
+    }));
   };
 
   const stopEditing = () => {
@@ -57,7 +68,7 @@ export const useTodos = () => {
   };
 
   return {
-    todos,
+    todos: board?.todos ?? [],
     openTodos,
     doneTodos,
     toggleOpen,

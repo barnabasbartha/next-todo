@@ -1,8 +1,10 @@
 import { useTodos } from '@/hooks/useTodos';
+import { useParams } from 'next/navigation';
 import { TodoItemInput } from './todo-item-input';
 
 export const NewTodoItem = () => {
-  const { addNew } = useTodos();
+  const { id } = useParams() as { id: string | undefined };
+  const { addNew } = useTodos(id ?? '');
 
   const handleValueChange = (value: string) => {
     const text = value.trim();

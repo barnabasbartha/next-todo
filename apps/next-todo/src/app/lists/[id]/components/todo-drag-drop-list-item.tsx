@@ -1,6 +1,7 @@
 import { useTodos } from '@/hooks/useTodos';
 import { Todo } from '@/models/todo';
 import { PencilIcon } from '@heroicons/react/16/solid';
+import { useParams } from 'next/navigation';
 import { TodoItemInput } from './todo-item-input';
 
 interface TodoDragDropListItemProps {
@@ -8,8 +9,9 @@ interface TodoDragDropListItemProps {
 }
 
 export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
+  const { id } = useParams() as { id: string | undefined };
   const { editingId, stopEditing, editText, startEditing, toggleOpen } =
-    useTodos();
+    useTodos(id ?? '');
 
   const isEditing = todo.id === editingId;
 
