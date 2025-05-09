@@ -10,8 +10,14 @@ interface TodoDragDropListItemProps {
 
 export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
   const { id } = useParams() as { id: string | undefined };
-  const { editingId, stopEditing, editText, startEditing, toggleOpen } =
-    useTodos(id ?? '');
+  const {
+    editingId,
+    stopEditing,
+    editText,
+    startEditing,
+    toggleOpen,
+    deleteTodo,
+  } = useTodos(id ?? '');
 
   const isEditing = todo.id === editingId;
 
@@ -20,6 +26,8 @@ export const TodoDragDropListItem = ({ todo }: TodoDragDropListItemProps) => {
     const text = value.trim();
     if (text) {
       editText(editingId, text);
+    } else {
+      deleteTodo(editingId);
     }
     stopEditing();
   };
